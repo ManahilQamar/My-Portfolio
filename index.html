@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Navbar with Flip Animation</title>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-circle"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CODER</div>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('about')">About</a></li>
+            <li><a href="#" onclick="showSection('portfolio')">Portfolio</a></li>
+            <li><a href="#" onclick="showSection('services')">Services</a></li>
+            <li><a href="#" onclick="showSection('news')">News</a></li>
+            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="image-section">
+            <img src="img.jpg" alt="Image">
+        </div>
+        
+        <div class="text-section-container">
+            <div class="text-section" id="textSection">
+                <!-- Front Side - Home Section -->
+                <div class="section-front" id="home-section">
+                    <h1 class="section-title">MENUCODER</h1>
+                    <p class="section-content">Creative <span>
+                        <div class="text-container">
+                            <h4 class="coder1">CODERS</h4>
+                            <h4 class="coder2">DEVELOPERS</h4>
+                            <h4 class="coder3">ENGINEERS</h4>
+                        </div>
+                    </span></p>
+                    <button class="btn">Click here</button>
+                </div>
+                
+                <!-- Back Side - All Other Sections -->
+                <div class="section-back">
+                    <div id="about-section" class="content-section">
+                        <h1 class="section-title">About Us</h1>
+                        <p class="section-content">We are a team of passionate coders, developers, and engineers dedicated to creating innovative solutions for our clients.</p>
+                        <button class="btn" onclick="showSection('home')">Back to Home</button>
+                    </div>
+                    
+                    <div id="portfolio-section" class="content-section">
+                        <h1 class="section-title">Our Portfolio</h1>
+                        <p class="section-content">Check out our latest projects and works that showcase our skills and expertise.</p>
+                        <button class="btn" onclick="showSection('home')">Back to Home</button>
+                    </div>
+                    
+                    <div id="services-section" class="content-section">
+                        <h1 class="section-title">Our Services</h1>
+                        <p class="section-content">We offer a wide range of services including web development, mobile app development, UI/UX design and more.</p>
+                        <button class="btn" onclick="showSection('home')">Back to Home</button>
+                    </div>
+                    
+                    <div id="news-section" class="content-section">
+                        <h1 class="section-title">Latest News</h1>
+                        <p class="section-content">Stay updated with our latest news, announcements and tech insights.</p>
+                        <button class="btn" onclick="showSection('home')">Back to Home</button>
+                    </div>
+                    
+                    <div id="contact-section" class="content-section">
+                        <h1 class="section-title">Contact Us</h1>
+                        <p class="section-content">Get in touch with us for your next project or any queries you may have.</p>
+                        <button class="btn" onclick="showSection('home')">Back to Home</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>CopyRight</p>
+        <div class="icons">
+            <i class='bx bxl-instagram-alt'></i>
+            <i class='bx bxl-youtube'></i>
+            <i class='bx bxl-linkedin'></i>
+            <i class='bx bxl-twitter'></i>
+        </div>
+    </div>
+
+    <script src="script.js"> </script>
+</body>
+</html>

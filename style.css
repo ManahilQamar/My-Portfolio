@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    overflow-x: hidden;
+    cursor: none;
+    height: 100vh;
+}
+
+/* Custom Cursor Styles */
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+
+.cursor-circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: 
+        transform 0.3s ease-out,
+        width 0.3s ease,
+        height 0.3s ease;
+}
+
+.btn:hover ~ .cursor .cursor-circle {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    width: 100%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar ul li {
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: block;
+    position: relative;
+}
+
+.navbar ul li:first-child a {
+    background-color: black;
+    color: white;
+}
+
+.navbar ul li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: black;
+    transition: width 0.4s ease;
+}
+
+.navbar ul li:hover::before {
+    width: 100%;
+}
+
+.navbar ul li a:hover {
+    color: white;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: black;
+    margin: 5px 0;
+    transition: all 0.5s ease;
+}
+
+@media (max-width: 800px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: -100%;
+        background-color: #fff;
+        width: 60%;
+        height: 100vh;
+        text-align: center;
+        transition: right 0.5s ease;
+        z-index: 100;
+    }
+
+    .navbar ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navbar ul.show {
+        right: 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-icon.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-icon.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    .image-section img {
+        display: none;
+    }
+    body {
+        cursor: auto;
+    }
+    .cursor {
+        display: none;
+    }
+    .text-section-container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        right: 7rem;
+
+    }
+}
+
+@media (max-width: 400px) {
+.section-title {
+font-size: 2rem !important; /* Temporary !important to test */
+}
+}
+@media (max-width: 400px) {
+.section-title {
+font-size: 1.8rem !important; /* Temporary !important to test */
+
+}
+.text-section-container{
+padding-left: 18rem !important;
+}
+}
+
+
+/* Main Container Styles */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: calc(73vh - 2px);
+    width: 90%;
+    max-width: 1200px;
+    background-color: #f1fbfb;
+    margin: 0 auto;
+    padding: 2px;
+    position: relative;
+    perspective: 1200px;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section img {
+    max-width: 100%;
+    width: 23rem;
+    height: 26rem;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+/* Text Section Styles */
+.text-section-container {
+    flex: 1;
+    padding-right: 4rem;
+    position: relative;
+    height: 100%;
+    min-height: 400px;
+}
+
+.text-section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.text-section.flipped {
+    transform: rotateY(180deg);
+}
+
+.section-front, .section-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-back {
+    transform: rotateY(180deg);
+}
+
+/* Content Styles */
+.section-title {
+    font-family: sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+}
+
+.section-content {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.btn {
+    background-color: #000;
+    color: white;
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-size: 1rem;
+    border: 2px solid black;
+    transition: all 0.3s ease;
+    cursor: none;
+    align-self: flex-start;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #000;
+}
+
+.text-container {
+    position: relative;
+    margin-left: 5rem;
+    top: -3rem;
+}
+
+.coder1, .coder2, .coder3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    opacity: 0;
+    animation: flipText 9s infinite;
+}
+
+.coder1 { animation-delay: 0s; }
+.coder2 { animation-delay: 3s; }
+.coder3 { animation-delay: 6s; }
+
+@keyframes flipText {
+    0%, 33.33% { opacity: 0; transform: rotateX(180deg); }
+    38.88%, 61.11% { opacity: 1; transform: rotateX(0deg); }
+    66.66%, 70% { opacity: 0; transform: rotateX(-90deg); }
+    70%, 100% { opacity: 0; transform: rotateX(-180deg); }
+}
+
+/* Footer Styles */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px 0;
+    color: #000000;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icons i {
+    font-size: 20px;
+    color: #000;
+}
+
+/* Content Sections */
+.content-section {
+    display: none;
+    width: 100%;
+    height: 100%;
+}

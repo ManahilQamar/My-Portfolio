@@ -39,13 +39,13 @@ body {
     border-radius: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
-    transition: 
+    transition:
         transform 0.3s ease-out,
         width 0.3s ease,
         height 0.3s ease;
 }
 
-.btn:hover ~ .cursor .cursor-circle {
+.btn:hover~.cursor .cursor-circle {
     width: 50px;
     height: 50px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -161,15 +161,19 @@ body {
     .menu-icon.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
+
     .image-section img {
         display: none;
     }
+
     body {
         cursor: auto;
     }
+
     .cursor {
         display: none;
     }
+
     .text-section-container {
         display: flex;
         justify-content: center;
@@ -179,19 +183,36 @@ body {
     }
 }
 
-@media (max-width: 400px) {
-.section-title {
-font-size: 2rem !important; /* Temporary !important to test */
+#iframeContainer {
+    display: none;
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
 }
-}
-@media (max-width: 400px) {
-.section-title {
-font-size: 1.8rem !important; /* Temporary !important to test */
 
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
-.text-section-container{
-padding-left: 18rem !important;
+
+@media (max-width: 400px) {
+    .section-title {
+        font-size: 2rem !important;
+        /* Temporary !important to test */
+    }
 }
+
+@media (max-width: 400px) {
+    .section-title {
+        font-size: 1.8rem !important;
+        /* Temporary !important to test */
+
+    }
+
+    .text-section-container {
+        padding-left: 18rem !important;
+    }
 }
 
 
@@ -247,7 +268,8 @@ padding-left: 18rem !important;
     transform: rotateY(180deg);
 }
 
-.section-front, .section-back {
+.section-front,
+.section-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -303,7 +325,9 @@ padding-left: 18rem !important;
     top: -3rem;
 }
 
-.coder1, .coder2, .coder3 {
+.coder1,
+.coder2,
+.coder3 {
     font-size: 1.5rem;
     font-weight: bold;
     position: absolute;
@@ -314,15 +338,43 @@ padding-left: 18rem !important;
     animation: flipText 9s infinite;
 }
 
-.coder1 { animation-delay: 0s; }
-.coder2 { animation-delay: 3s; }
-.coder3 { animation-delay: 6s; }
+.coder1 {
+    animation-delay: 0s;
+}
+
+.coder2 {
+    animation-delay: 3s;
+}
+
+.coder3 {
+    animation-delay: 6s;
+}
 
 @keyframes flipText {
-    0%, 33.33% { opacity: 0; transform: rotateX(180deg); }
-    38.88%, 61.11% { opacity: 1; transform: rotateX(0deg); }
-    66.66%, 70% { opacity: 0; transform: rotateX(-90deg); }
-    70%, 100% { opacity: 0; transform: rotateX(-180deg); }
+
+    0%,
+    33.33% {
+        opacity: 0;
+        transform: rotateX(180deg);
+    }
+
+    38.88%,
+    61.11% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+
+    66.66%,
+    70% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+
+    70%,
+    100% {
+        opacity: 0;
+        transform: rotateX(-180deg);
+    }
 }
 
 /* Footer Styles */

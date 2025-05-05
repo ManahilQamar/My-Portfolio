@@ -1,11 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="squid.css">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background: url('gamebg.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .game-container {
+            position: relative;
+            width: 800px;
+            height: 400px;
+            background: #ecf0f1;
+            border: 5px solid #34495e;
+            overflow: hidden;
+        }
+
+        /* Doll Styling */
+        .doll {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 150px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .start {
+            background-image: url('doll1.png');
+        }
+
+        .stop {
+            background-image: url('doll2.png');
+        }
+
+        /* Guard Styling */
+        .guard1,
+        .guard2 {
+            position: absolute;
+            top: 30%;
+            transform: translate(-50%, -50%);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 60px;
+            height: 60px;
+            animation: idle 5s infinite;
+        }
+
+        .guard1 {
+            left: 37%;
+            background-image: url('guard1.png');
+        }
+
+        .guard2 {
+            left: 60%;
+            background-image: url('guard2.png');
+        }
+
+        @keyframes idle {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        /* Finish Line */
+        .finish-line {
+            position: absolute;
+            top: 0;
+            right: 4px;
+            width: 10px;
+            height: 100%;
+            background: red;
+        }
+
+        /* Player Styling */
+        .player {
+            position: absolute;
+            bottom: 90px;
+            /* Adjusted to move player closer to the bottom */
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: blue;
+            border-radius: 50%;
+        }
+
+        button {
+            padding: 25px;
+            font-size: 36px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            background-color: #ffffff;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+
+        button:hover {
+            background-color: #2c3e50;
+        }
+
+        #moveBtn::after {
+            content: 'O';
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            font-weight: bold;
+            color: blue;
+        }
+
+        #stopBtn::after {
+            content: 'X';
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            font-weight: bold;
+            color: red;
+        }
+
+        /* Message Styling */
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+            display: none;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .message.win {
+            color: #1fe270;
+        }
+
+        /* Restart Button Styling */
+        #restartBtn {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: #f44;
+            color: rgb(255, 255, 255);
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 5%;
+            left: 38%;
+
+        }
+
+
+
+        .lose-message.active #restartBtn {
+            display: flex;
+        }
+
+        @media (max-width: 400px) {
+            .game-container {
+                width: 200px;
+                height: 300px;
+
+            }
+
+            .game-name {
+                font-size: x-small;
+                color: #fff;
+            }
+
+            .doll {
+                top: 0px;
+                left: 70%;
+                width: 100px;
+                height: 40px;
+            }
+
+
+
+            .guard1,
+            .guard2 {
+                position: absolute;
+                top: 8%;
+                height: 20px;
+            }
+
+            .guard1 {
+                left: 45%;
+            }
+
+            .guard2 {
+                left: 80%;
+            }
+
+
+            .finish-line {
+                top: 40px;
+                right: 0px;
+                width: 100%;
+                height: 5px;
+            }
+
+            #player {
+                position: absolute;
+                top: 270px;
+                /* Starting position from bottom */
+                left: 50%;
+                transform: translateX(-50%);
+                width: 20px;
+                height: 20px;
+                background: blue;
+            }
+
+            /* Button Styling */
+            button {
+                padding: 16px !important;
+            }
+
+
+
+            #moveBtn::after {
+
+                font-size: 25px !important;
+
+            }
+
+            #stopBtn::after {
+                font-size: 25px !important;
+
+            }
+
+            .message {
+                font-size: 10px !important;
+                font-weight: normal;
+            }
+
+
+            /* Restart Button Styling */
+            #restartBtn {
+                bottom: 20%;
+                left: 30% !important;
+                padding: 10px !important;
+                font-size: small;
+
+            }
+
+            .lose-message.active #restartBtn {
+                display: flex;
+            }
+
+        }
+    </style>
     <title>SQUID GAME</title>
 </head>
+
 <body>
     <div class="game-name">
         <h1>SQUID GAME</h1>
@@ -26,6 +303,92 @@
         <button id="moveBtn"></button>
         <button id="stopBtn"></button>
     </div>
-    <script src="squid.js"></script>
+    <script>
+        const player = document.getElementById('player');
+        const doll = document.getElementById('doll');
+        const message = document.getElementById('message');
+        const moveBtn = document.getElementById('moveBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const restartBtn = document.getElementById('restartBtn');
+
+        let isGreenLight = true;
+        let playerPosition = 20;
+        let moveInterval = null;
+
+        function toggleDoll() {
+            isGreenLight = !isGreenLight;
+
+            if (isGreenLight) {
+                doll.classList.remove('stop');
+                doll.classList.add('start');
+            } else {
+                doll.classList.remove('start');
+                doll.classList.add('stop');
+            }
+        }
+
+        // Random interval for toggling doll
+        setInterval(toggleDoll, Math.random() * 3000 + 4000);
+
+        function movePlayer() {
+            if (!isGreenLight) {
+                message.textContent = 'You moved during a red light! Game Over.';
+                message.classList.remove('win');
+                message.style.display = 'block';
+                clearInterval(moveInterval);
+                endGame();
+                return;
+            }
+
+            if (window.innerWidth <= 400) {
+                // Small screen: move up
+                let currentTop = parseInt(getComputedStyle(player).top);
+                if (isNaN(currentTop)) currentTop = player.offsetTop;
+
+                player.style.top = (currentTop - 5) + 'px';
+
+                if (currentTop <= 45) {
+                    message.textContent = 'You win!';
+                    message.classList.add('win');
+                    message.style.display = 'block';
+                    clearInterval(moveInterval);
+                    endGame();
+                }
+            } else {
+                // Large screen: move right
+                playerPosition += 5;
+                player.style.left = playerPosition + 'px';
+
+                if (playerPosition >= 740) {
+                    message.textContent = 'You win!';
+                    message.classList.add('win');
+                    message.style.display = 'block';
+                    clearInterval(moveInterval);
+                    endGame();
+                }
+            }
+        }
+
+        moveBtn.addEventListener('click', () => {
+            if (!moveInterval) {
+                moveInterval = setInterval(movePlayer, 100);
+            }
+        });
+
+        stopBtn.addEventListener('click', () => {
+            clearInterval(moveInterval);
+            moveInterval = null;
+        });
+
+        function endGame() {
+            restartBtn.style.display = 'flex'; // Show the restart button
+        }
+
+        restartBtn.addEventListener('click', () => {
+            window.location.reload(); // Simple way to reset everything
+        });
+
+    </script>
 </body>
+
 </html>

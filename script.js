@@ -90,14 +90,12 @@ function showSection(sectionId) {
             document.getElementById(sectionId + '-section').style.display = 'block';
             currentSection = sectionId;
 
-            // If switching between non-home sections, do a quick flip animation
             if (currentSection !== 'home' && !textSection.classList.contains('flipped')) {
                 textSection.classList.add('flipped');
             }
         }, currentSection === 'home' ? 400 : 0);
     }
 
-    // Close mobile menu if open
     const menu = document.querySelector('.navbar ul');
     const menuIcon = document.querySelector('.menu-icon');
     if (menu.classList.contains('show')) {
@@ -106,7 +104,6 @@ function showSection(sectionId) {
     }
 }
 
-// Initialize - hide all content sections except home
 document.addEventListener('DOMContentLoaded', () => {
     contentSections.forEach(section => {
         section.style.display = 'none';

@@ -93,8 +93,8 @@
     /* Cartoon Ball */
     .cartoon {
       position: absolute;
-      width: 19%;
-      height: 40%;
+      width: 14%;
+      height: 30%;
       background: url("pic.jpeg") no-repeat center;
       top: 50%;
       left: 50%;
@@ -156,6 +156,7 @@
       position: absolute;
       top: 46%;
       left: 48%;
+      transform: rotate(var(--rotate)) translate(0, -90px);
       transform-origin: center;
     }
 
@@ -206,449 +207,52 @@
       }
     }
 
-    @media (max-width: 2983px) {
+    @media (max-width: 500px) {
       .heading {
-        font-size: 3.8rem;
-        padding: 2%;
+        font-size: 1rem;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 6px;
+        padding: 80px 10px 10px;
+        height: calc(100vh - 80px);
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .box {
-        font-size: 1.3rem;
+        position: static;
+        width: 7rem !important;
+        height: 10rem !important;
+        min-height: 80px;
+        margin: 0;
+        font-size: 0.7rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .cartoon {
-        width: 11.5%;
-        height: 39%;
+        display: none;
+      }
+
+      .light {
+        display: none;
       }
 
       .text span {
-        transform: rotate(var(--rotate)) translate(0, -185px);
+        transform: rotate(var(--rotate)) translate(0, -110px);
       }
-    }
-
-    @media (max-width: 2820px) {
-      .heading {
-        font-size: 3.8rem;
-        padding: 2%;
-      }
-
-      .box {
-        font-size: 1.3rem;
-      }
-
-      .cartoon {
-        width: 12%;
-        height: 39%;
-      }
-    }
-
-    @media (max-width: 2320px) {
-      .heading {
-        font-size: 3.8rem;
-        padding: 2%;
-      }
-
-      .box {
-        font-size: 1.3rem;
-      }
-
-      .cartoon {
-        width: 15%;
-        height: 39%;
-      }
-    }
-
-    @media (max-width: 2220px) {
-      .heading {
-        font-size: 3.8rem;
-        padding: 2%;
-      }
-
-      .box {
-        font-size: 1.3rem;
-      }
-
-      .cartoon {
-        width: 16%;
-        height: 40%;
-      }
-    }
-
-    @media (max-width: 2000px) {
-      .heading {
-        font-size: 3.8rem;
-        padding: 2%;
-      }
-
-      .box {
-        font-size: 1.3rem;
-      }
-
-      .cartoon {
-        width: 18%;
-        height: 40%;
-      }
-    }
-
-    @media (max-width: 1900px) {
-      .heading {
-        font-size: 3.5rem;
-        padding: 3%;
-      }
-
-      .box {
-        font-size: 1.2rem;
-      }
-
-      .cartoon {
-        width: 19%;
-        height: 39%;
-      }
-    }
-
-    @media (max-width: 1700px) {
-      .heading {
-        font-size: 3.5rem;
-        padding: 3%;
-      }
-
-      .box {
-        font-size: 1.2rem;
-      }
-
-      .cartoon {
-        width: 19%;
-        height: 36%;
-      }
-
-    }
-
-    @media (max-width: 1500px) {
-      .heading {
-        font-size: 3.5rem;
-        padding: 3%;
-      }
-
-      .box {
-        font-size: 1.2rem;
-      }
-
-      .cartoon {
-        width: 20%;
-        height: 34%;
-      }
-
-      .eye {
-        width: 10%;
-        height: 18%;
-      }
-
-      .eye.left {
-        top: 35%;
-        left: 35%;
-      }
-
-      .eye.right {
-        top: 35%;
-        left: 55%;
-      }
-
-      .text span {
-        transform: rotate(var(--rotate)) translate(0, -160px);
-      }
-    }
-
-    @media (max-width: 1400px) {
-      .heading {
-        font-size: 3.5rem;
-        padding: 3%;
-      }
-
-      .box {
-        font-size: 1.2rem;
-      }
-
-      .cartoon {
-        width: 25%;
-        height: 38%;
-      }
-
-      .eye {
-        width: 10%;
-        height: 18%;
-      }
-
-      .eye.left {
-        top: 35%;
-        left: 35%;
-      }
-
-      .eye.right {
-        top: 35%;
-        left: 55%;
-      }
-
-      .text span {
-        transform: rotate(var(--rotate)) translate(0, -180px);
-      }
-    }
-
-    @media (max-width: 1300px) {
-      .heading {
-        font-size: 3.8rem;
-        padding: 5%;
-      }
-
-      .box {
-        font-size: 1.2rem;
-      }
-
-      .cartoon {
-        width: 22%;
-        height: 33%;
-      }
-
-      .eye {
-        width: 10%;
-        height: 18%;
-      }
-
-      .eye.left {
-        top: 35%;
-        left: 35%;
-      }
-
-      .eye.right {
-        top: 35%;
-        left: 55%;
-      }
-
-      .text span {
-        transform: rotate(var(--rotate)) translate(0, -150px);
-      }
-    }
-
-
-    @media (max-width: 1100px) {
-      .heading {
-        font-size: 45px;
-        padding: 2%;
-      }
-
-      .box {
-        font-size: 12px;
-      }
-
-      .cartoon {
-        width: 18%;
-        height: 22%;
-      }
-
-      .text span {
-        transform: rotate(var(--rotate)) translate(0, -111px);
-      }
-    }
-
-    @media (max-width: 1025px) {
-      .heading {
-        font-size: 1.6rem;
-        padding: 1%;
-      }
-
-      .box {
-        font-size: 0.8rem;
-      }
-
-      .cartoon {
-        width: 10%;
-        height: 35%;
-      }
-
-      .text span {
-        transform: rotate(var(--rotate)) translate(0, -65px);
-      }
-
-      .text span {
-        top: 42%;
-        left: 45%;
-      }
-
-      .eye {
-        width: 10%;
-        height: 18%;
-      }
-
-      .eye.left {
-        top: 39%;
-        left: 38%;
-      }
-
-      .eye.right {
-        top: 39%;
-        left: 52%;
-      }
-    }
-
-    @media (max-width: 1022px) {
-      .heading {
-        font-size: 2.5rem;
-        padding: 3%;
-      }
-
-      .box {
-        font-size: 0.8rem;
-      }
-
-      .cartoon {
-        width: 22%;
-        height: 26%;
-      }
-
-      .text span {
-        transform: rotate(var(--rotate)) translate(0, -120px);
-      }
-
-      .eye {
-        width: 10%;
-        height: 18%;
-      }
-
-      .eye.left {
-        top: 35%;
-        left: 35%;
-      }
-
-      .eye.right {
-        top: 35%;
-        left: 55%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .heading {
-        font-size: 1.6rem;
-        padding: 1%;
-      }
-
-      .box {
-        font-size: 0.8rem;
-      }
-
-      .cartoon {
-        width: 12%;
-        height: 32%;
-      }
-
-      .text span {
-        transform: rotate(var(--rotate)) translate(0, -56px);
-      }
-
-      .text span {
-        font-size: 12px;
-        top: 42%;
-        left: 45%;
-      }
-
-      .eye {
-        width: 10%;
-        height: 18%;
-      }
-
-      .eye.left {
-        top: 39%;
-        left: 38%;
-      }
-
-      .eye.right {
-        top: 39%;
-        left: 52%;
-      }
-
-    }
-
-    @media (max-width: 426px) {
-      .heading {
-        font-size: 1.1rem;
-        padding: 4%;
-      }
-
-      .box {
-        font-size: 0.3rem;
-      }
-
-      .cartoon {
-        width: 16%;
-        height: 22%;
-      }
-
-      .text span {
-        transform: rotate(var(--rotate)) translate(0, -38px);
-      }
-
-      .text span {
-        font-size: 6px;
-        top: 47%;
-        left: 47%;
-      }
-
-      .eye {
-        width: 10%;
-        height: 18%;
-      }
-
-      .eye.left {
-        top: 39%;
-        left: 38%;
-      }
-
-      .eye.right {
-        top: 39%;
-        left: 52%;
-      }
-
-    }
-
-
-    @media (max-width: 320px) {
-      .heading {
-        font-size: 0.8rem;
-        padding: 6%;
-      }
-
-      .box {
-        font-size: 0.3rem;
-      }
-
-      .cartoon {
-        width: 20%;
-        height: 21%;
-      }
-
-      .text span {
-        transform: rotate(var(--rotate)) translate(0, -35px);
-      }
-
-      .text span {
-        font-size: 4px;
-        top: 46%;
-        left: 49%;
-      }
-
-      .eye {
-        width: 10%;
-        height: 18%;
-      }
-
-      .eye.left {
-        top: 39%;
-        left: 38%;
-      }
-
-      .eye.right {
-        top: 39%;
-        left: 52%;
-      }
-
     }
   </style>
 </head>
@@ -660,22 +264,15 @@
       Web Animations
     </div>
     <div class="light"></div>
-    <!-- Left Side Boxes -->
-    <div class="box left-1">
-      <img src="calculatorIcon-64.png" alt="">
-
-    </div>
-    <div class="box left-2">Left Box 2</div>
-
-    <!-- Right Side Boxes -->
-    <div class="box right-1">Right Box 1</div>
-    <div class="box right-2">Right Box 2</div>
-
-    <!-- Bottom Boxes -->
-    <div class="box bottom-1">Bottom Box 1</div>
-    <div class="box bottom-2">Bottom Box 2</div>
-    <div class="box bottom-3">Bottom Box 3</div>
-    <div class="box bottom-4">Bottom Box 4</div>
+    <!-- Boxes will reorder naturally in mobile view -->
+    <div class="box left-1">Box 1</div>
+    <div class="box right-1">Box 2</div>
+    <div class="box left-2">Box 3</div>
+    <div class="box right-2">Box 4</div>
+    <div class="box bottom-1">Box 5</div>
+    <div class="box bottom-2">Box 6</div>
+    <div class="box bottom-3">Box 7</div>
+    <div class="box bottom-4">Box 8</div>
 
     <!-- Cartoon Ball -->
     <div class="cartoon">
@@ -684,7 +281,6 @@
           <p>10101 1001001 010101 00110011 1101001 0110011 010101 010110</p>
         </div>
       </div>
-
       <div class="eye left"></div>
       <div class="eye right"></div>
     </div>
@@ -717,8 +313,6 @@
         eye.style.transform = `translate(${moveX}px, ${moveY}px)`;
       });
     });
-
-
 
     const text = document.querySelector(".text p");
     const screenWidth = window.innerWidth;

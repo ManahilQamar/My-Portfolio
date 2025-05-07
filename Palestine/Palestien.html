@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flag of Palestine</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+
+
+
+
+    #generate-quote-btn {
+      background-color: #094f04;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #quote-container {
+      font-size: 34px;
+      font-style: italic;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <button id="generate-quote-btn">Dua Generate</button>
+  <div id="quote-container"></div>
+  </div>
+
+  <script>
+    const quotes = [
+      '"Projects From My Portfolio"',
+      '"Explore My Project Collection"',
+      '"Portfolio Of My Creations"',
+      '"My Frontend Coding Showcase"',
+    ];
+
+    const quoteBtn = document.getElementById('generate-quote-btn');
+    const quoteContainer = document.getElementById('quote-container');
+
+    // Set initial quote
+    quoteContainer.innerText = quotes[0];
+
+    quoteBtn.addEventListener('click', () => {
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteContainer.innerText = randomQuote;
+    });
+  </script>
+
+</body>
+
+</html>

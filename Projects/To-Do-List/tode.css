@@ -1,0 +1,76 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url('cute.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.todo-container {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 10px 10px 5px 0px rgba(91, 91, 91, 0.75);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: palevioletred;
+}
+
+input[type="text"] {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: palevioletred;
+  box-shadow: 4px 4px 5px 0px rgba(91, 91, 91, 0.75);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(222, 70, 120);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #eee8e8;
+  margin: 5px 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li .delete-btn {
+  background-color: #dc3545;
+  color: rgb(250, 225, 225);
+  box-shadow: 4px 4px 5px 0px rgba(142, 137, 137, 0.75);
+  border: none;
+  position: relative;
+  left: 5rem;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+li .delete-btn:hover {
+  background-color: #c82333;
+}

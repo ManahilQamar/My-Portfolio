@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.container {
+  border: 1px solid rgb(131, 129, 129);
+  overflow: hidden;
+  height: 400px;
+  width: 190px;
+  border-radius: 20px;
+  background-color: black;
+}
+
+.top-container {
+  color: white;
+  font-size: 6px;
+  padding: 2px;
+  height: 60px;
+  position: relative;
+  left: 7px;
+  top: 2px;
+}
+
+
+.input {
+  color: white;
+  font-size: 40px;
+  height: 80px;
+  text-align: end;
+  margin: 10px;
+  background-color: rgb(4, 4, 4);
+}
+
+.button-container {
+  display: block;
+
+}
+
+.container button {
+  height: 37px;
+  width: 37px;
+  margin: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 20px;
+  background-color: rgb(49, 48, 48);
+  border: none;
+  color: white;
+  border-radius: 50px;
+  position: relative;
+  left: 8px;
+  transition: filter .3s;
+
+
+}
+
+.container button:active,
+.container button:focus {
+  filter: brightness(140%);
+}
+
+#btn-0 {
+  width: 43%;
+  background-color: rgb(49, 48, 48);
+  text-align: start;
+  padding-left: 12px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#btn-divide {
+  background: rgb(242, 142, 3);
+
+}
+
+#btn-multiply {
+  background: rgb(242, 142, 3);
+
+}
+
+#btn-subtract {
+  background: rgb(242, 142, 3);
+
+}
+
+#btn-add {
+  background: rgb(242, 142, 3);
+
+}
+
+#btn-equal {
+  background: rgb(242, 142, 3);
+
+}
+
+/* #number{
+  background-color: rgb(49, 48, 48) ;
+} */
+#btn-AC {
+  background-color: rgb(184, 181, 181);
+  color: black;
+}
+
+#btn-plus-minus {
+  background-color: rgb(184, 181, 181);
+  color: black;
+}
+
+#btn-percent {
+  background-color: rgb(184, 181, 181);
+  color: black;
+}
+
+.footer {
+  background-color: #fff;
+  height: 2px;
+  width: 66px;
+  border-radius: 50px;
+  position: relative;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+}

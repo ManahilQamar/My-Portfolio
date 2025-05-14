@@ -32,6 +32,7 @@
       font-size: 1rem;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
+      font-size: clamp(0.8rem, 2vw, 1.2rem);
     }
 
     .box.left-1 {
@@ -176,6 +177,7 @@
       background: linear-gradient(90deg, white, rgb(186, 186, 186));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      font-size: clamp(1.5rem, 5vw, 2.4rem);
     }
 
     .light {
@@ -214,6 +216,8 @@
 
     @media (max-width: 500px) {
       .heading {
+
+        text-align: center;
         font-size: 1.2rem;
         font-weight: 800;
         padding: 5px;
@@ -224,6 +228,7 @@
       }
 
       .container {
+
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
@@ -232,6 +237,10 @@
         height: calc(100vh - 80px);
         width: 100%;
         box-sizing: border-box;
+      }
+
+      .card-content {
+        font-size: clamp(0.5rem, 2.5vw, 0.8rem);
       }
 
       .box {
@@ -250,6 +259,11 @@
         align-items: center;
       }
 
+      .box.bottom-4 {
+        grid-column: 2;
+        grid-row: 4;
+      }
+
       .cartoon {
         display: none;
       }
@@ -260,6 +274,36 @@
 
       .text span {
         transform: rotate(var(--rotate)) translate(0, -110px);
+      }
+
+
+      .CalculaterImg {
+
+        top: 10px !important;
+        display: flex;
+
+      }
+
+
+      .calculaterBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        position: relative;
+        bottom: 20px;
+      }
+
+      .calculatorText-title {
+
+        position: relative;
+        top: -20px !important;
+      }
+
+      .calculatorText {
+        position: relative;
+        top: -30px !important;
+        font-size: 9px;
       }
     }
 
@@ -278,11 +322,15 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
-        gap: 6px;
+        gap: 8px;
         padding: 80px 10px 10px 15px;
         height: calc(100vh - 80px);
         width: 100%;
         box-sizing: border-box;
+      }
+
+      .card-content {
+        font-size: clamp(0.5rem, 2.5vw, 0.8rem);
       }
 
       .box {
@@ -313,6 +361,54 @@
       .text span {
         transform: rotate(var(--rotate)) translate(0, -110px);
       }
+
+      .card-image {
+
+        width: 3rem !important;
+        height: 3rem !important;
+      }
+
+      .squidBtn {
+        font-size: 6px;
+      }
+
+
+      .redGreenText {
+        font-size: 0.7em !important;
+
+      }
+
+
+
+      .CalculaterImg {
+        width: 30px !important;
+        height: 30px !important;
+        top: 20px !important;
+        display: flex;
+
+      }
+
+
+      .calculaterBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        position: relative;
+        bottom: 30px;
+      }
+
+      .calculatorText-title {
+
+        position: relative;
+        top: -20px !important;
+      }
+
+      .calculatorText {
+        position: relative;
+        top: -30px !important;
+        font-size: 7px !important;
+      }
     }
 
     @media (max-width: 300px) {
@@ -325,6 +421,10 @@
         left: 2rem;
         width: 100%;
         box-sizing: border-box;
+      }
+
+      .card-content {
+        font-size: clamp(0.5rem, 2.5vw, 0.8rem);
       }
 
       .container {
@@ -366,6 +466,22 @@
       .text span {
         transform: rotate(var(--rotate)) translate(0, -110px);
       }
+
+      .card-image {
+
+        width: 4rem !important;
+        height: 4rem !important;
+      }
+
+      .squidBtn {
+        font-size: 10px;
+      }
+
+
+      .redGreenText {
+        font-size: 0.9em !important;
+
+      }
     }
 
     .card-image {
@@ -377,9 +493,28 @@
       margin: 0 auto;
     }
 
+    .squidBtn {
+      background: #fd3179;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .squidBtn a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
+
+    .redGreenText {
+      position: relative;
+      font-size: 1.2em;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
     .card-content {
-      font-size: 10px;
-      padding: 12px;
+      font-size: clamp(0.6rem, 3vw, 0.9rem);
+      padding: 1em;
 
     }
 
@@ -394,6 +529,7 @@
       top: 10px;
     }
 
+
     #generate-quote-btn {
       background-color: #094f04;
       color: #ffffff;
@@ -403,13 +539,42 @@
       cursor: pointer;
     }
 
+    .CalculaterImg {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      top: 60px;
+    }
+
     .calculaterBtn {
-      background-color: #094f04;
+      background-color: #673475;
       color: #ffffff;
       padding: 5px 10px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 8px;
+      font-weight: 800;
+    }
+
+    .calculaterBtn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .calculatorText-title {
+      position: relative;
+      top: 12px;
+    }
+
+    .calculatorText {
+      font-size: 9px;
+    }
+
+    .CalculaterCard {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
   </style>
 </head>
@@ -423,12 +588,11 @@
     <!-- Boxes will reorder naturally in mobile view -->
     <div class="box left-1">
       <div class="card">
-        <img src="pic.jpeg" alt="CSS" class="card-image">
         <div class="card-content">
-          <span class="card-tag">CSS</span>
-          <h3 class="card-title">CSS Grid Layout Secrets</h3>
-          <p class="card-excerpt">Unlock the full potential of CSS Grid for complex responsive layouts.</p>
-          <button><a href="Squid/squid.html" target="_blank">Calculater</a></button>
+          <img src="squid.png" alt="CSS" class="card-image">
+          <p class="redGreenText"> Try my Red Light, <br> Green Light <br> challenge
+          </p>
+          <button class="squidBtn"><a href="Squid/squid.html" target="_blank">Play Now</a></button>
 
         </div>
       </div>
@@ -441,8 +605,8 @@
       <div class="card">
         <img src="pic.jpeg" alt="CSS" class="card-image2">
         <div class="card-content">
-          <h3 class="card-title">CSS Grid Layout Secrets</h3>
-          <p class="card-excerpt">Unlock the full potential of CSS Grid for complex responsive layouts.</p>
+          <h3 class="card-title"></h3>
+          <p class=""></p>
 
         </div>
       </div>
@@ -451,41 +615,42 @@
     <div class="box bottom-1">
       <button>click</button>
     </div>
-  </div>
-  <div class="box bottom-2">
-    <div class="card">
-      <img src="Calculater/calculatorIcon.png" alt="Calculator" class="card-image2">
-      <div class="card-content">
-        <h3 class="card-title">My Calculator Project</h3>
-        <p class="card-excerpt">
-          Click the button below to try my calculator, built using HTML, CSS, and JavaScript.
-        </p>
-        <button class="calculaterBtn"><a href="Calculater/calculater.html" target="_blank">Calculater</button>
+    <div class="box bottom-2">
+      <div class="CalculaterCard">
+        <img src="Calculater/calculatorIcon.png" alt="Calculator" class="CalculaterImg">
+        <div class="card-content">
+          <h5 class="calculatorText-title">My Calculator Project</h5>
+          <p class="calculatorText">
+            Click the button below to try my calculator, built using HTML, CSS, and JavaScript.
+          </p>
+          <button class="calculaterBtn"><a href="Calculater/calculater.html" target="_blank">Try Now</a></button>
+        </div>
+      </div>
+    </div>
+    <div class="box bottom-3">
+      <div class="CalculaterCard">
+        <img src="Calculater/calculatorIcon.png" alt="Calculator" class="CalculaterImg">
+        <div class="card-content">
+          <h5 class="calculatorText-title">My Calculator Project</h5>
+          <p class="calculatorText">
+            Click the button below to try my calculator, built using HTML, CSS, and JavaScript.
+          </p>
+          <button class="calculaterBtn"><a href="Calculater/calculater.html" target="_blank">Try Now</a></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="box bottom-4">
+      <div class="card">
+        <img src="pic.jpeg" alt="CSS" class="card-image2">
+
       </div>
     </div>
   </div>
 
-  <div class="box bottom-3">
-    <div class="card">
-      <img src="pic.jpeg" alt="CSS" class="card-image2">
-      <div class="card-content">
-        <h3 class="card-title">CSS Grid Layout Secrets</h3>
-        <p class="card-excerpt">Unlock the full potential of CSS Grid for complex responsive layouts.</p>
-
-      </div>
-    </div>
-  </div>
-  <div class="box bottom-4">
-    <div class="card">
-      <img src="pic.jpeg" alt="CSS" class="card-image">
-      <div class="card-content">
-        <h3 class="card-title">CSS Grid Layout Secrets</h3>
-        <p class="card-excerpt">Unlock the full potential of CSS Grid for complex responsive layouts.</p>
-
-      </div>
-    </div>
   </div>
 
+  </div>
   <!-- Cartoon Ball -->
   <div class="cartoon">
     <div class="circle">
@@ -530,7 +695,6 @@
     const screenWidth = window.innerWidth;
 
     if (screenWidth <= 480) {
-      // For mobile screens
       text.innerHTML = text.innerText
         .split("")
         .map(
@@ -539,7 +703,6 @@
         )
         .join("");
     } else {
-      // For larger screens
       text.innerHTML = text.innerText
         .split("")
         .map(
